@@ -361,15 +361,17 @@ with the following content:
     representation of the binary SCT data as defined in {{RFC6962}}
     Section 3.2.
 
-The 'x509_chain' element MUST contain the leaf certificate and the
-full chain to a known root.
+The 'x509_chain' element SHOULD contain the leaf certificate and the
+full chain to a trust anchor that is publicly trusted by the client. 
+A client SHOULD NOT submit certificates that chain to an administratively
+trusted root, as this represents private client data. If a 
+certificate contains SCTs issued by publicly trusted logs, and chains
+to an administratively added trust anchor, the client SHOULD submit
+the 'x509_chain' consisting only of the leaf certificate.
 
-\[ TBD: There was discussion about including a few field for client->server 
-reporting, which is the exact set and order of certificates sent by the HTTPS 
-server to the client. This is additional diagnostic information that a HTTPS server
-could use to check it's deployment... but is pretty much useless to CT or gossip.
-Right now we're not including this, but we're polling server operators to see if they
-would welcome this data.]
+\[
+tjr: We want to change the 'SHOULD NOT' to something slightly different.
+\]
 
 ## STH pollination
 
