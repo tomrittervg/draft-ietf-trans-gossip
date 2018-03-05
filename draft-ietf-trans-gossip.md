@@ -1195,8 +1195,8 @@ in size and an SCT 1 Kilobyte. This yields 732 Megabytes.
 This data can be large, but it is calculable. Web properties with more
 certificates and domains are more likely to be able to handle the
 increased storage need, while small web properties will not seen an
-undue burden. Therefore HTTPS servers SHOULD NOT delete SCTs or
-Certificate Chains. This completely mitigates flushing attacks.
+undue burden. HTTPS servers SHOULD NOT delete SCTs or Certificate
+Chains. This completely mitigates flushing attacks.
 
 Again, note that it is important that implementors do not calculate
 the exact size of cache expected -- if an attack does occur, the new
