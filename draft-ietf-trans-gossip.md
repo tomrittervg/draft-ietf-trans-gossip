@@ -420,7 +420,11 @@ first party domain. This is described in {{double-keying}}. Gossip
 would be performed normally for third party domains only when the user
 revisits the first party domain. In lieu of 'double-keying', an HTTPS
 client MAY treat SCT Feedback in the same manner it treats other
-security mechanisms that can enable tracking (such as HSTS and HPKP.)
+security mechanisms that can enable tracking. An HTTPS client MAY
+entirely omit performing SCT Feedback in a Private Browsing Mode, it
+may perform it using data only gathered during the Private Browsing
+session, or it may use data gathered during normal browsing (in the
+same way HSTS and HPKP is used in many browser implementations today.)
 
 SCT Feedback is only performed when a user connects to a site via
 intentional web browsing or normal third party resource inclusion.
