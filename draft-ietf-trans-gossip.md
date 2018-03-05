@@ -2406,6 +2406,23 @@ SCTStoreManager class will be used.
       update_cache_percentage();
     }
 
+# Not Considered Here
+
+There are at least two additional approaches that would considerably
+change how Gossip would function and what components are necessary.
+
+A web server may provide a HTTPS Client with an inclusion proof, a
+consistency proof, or both. This proof may be embedded in the
+certificate, a stapled OCSP response, a TLS extension, or another
+mechanism.
+
+A user agent may receive batch updates of STHs that are known to be
+publicly distributed; for the purpose of considering any data that
+chains to such a STH as being trusted.
+
+Neither of these mechanisms are considered in this document, but the
+privacy implications of both make them interesting and worth
+investigating for all possible attack vectors and edge cases.
 
 # IANA considerations
 
