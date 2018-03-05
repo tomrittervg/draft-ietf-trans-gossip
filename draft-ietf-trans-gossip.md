@@ -1194,7 +1194,7 @@ in size and an SCT 1 Kilobyte. This yields 732 Megabytes.
 
 This data can be large, but it is calculable. Web properties with more
 certificates and domains are more likely to be able to handle the
-increased storage need, while small web properties will not seen an
+increased storage need, while small web properties will not see an
 undue burden. HTTPS servers SHOULD NOT delete SCTs or Certificate
 Chains. This completely mitigates flushing attacks.
 
@@ -1207,11 +1207,10 @@ attack.
 If an HTTPS server is operating in a constrained environment and
 cannot devote enough storage space to hold all SCTs and Certificate
 Chains it is authoritative for it is recommended to configure the SCT
-Feedback mechanism to allow only certain certificates that are known
-to be valid. These chains and SCTs can then be discarded without being
-stored or subsequently provided to any clients or auditors. If the
-allowlist is not sufficient, the Deletion Algorithm in
-{{deletion-algorithm}} is recommended to make it more difficult for
+Feedback mechanism to disregard all certificates that are known to be
+valid. (Although checking if SCTs are included within a MMD may be
+desirable.) If the allowlist is not sufficient, the Deletion Algorithm
+in {{deletion-algorithm}} is recommended to make it more difficult for
 the attacker to perform a flushing attack.
 
 ### SCTs & Certificate Chains on HTTPS Clients
