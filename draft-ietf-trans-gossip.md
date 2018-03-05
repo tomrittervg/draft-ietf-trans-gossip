@@ -1436,7 +1436,7 @@ the adversary can reliably block this second connection to block
 gossip without affecting normal browsing. For this reason it is
 recommended to run the gossip protocols over an existing connection to
 the server, making use of connection multiplexing such as HTTP
-Keep-Alive or SPDY.
+Keep-Alive or HTTP/2.
 
 Truncation is also a concern. If a client always establishes a TLS
 connection, makes a request, receives a response, and then always
